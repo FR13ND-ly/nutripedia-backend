@@ -148,7 +148,7 @@ def ai(request):
     dietaryPrefsString = ' '.join(el for el in dietaryPrefs)
     query = f"I have this allergens: {allergensString}; and next dietary preferences: {dietaryPrefsString}. {question}"
     res = g4f.ChatCompletion.create(
-        model = "gpt-3.5-turbo",
+        model = "gemini-pro",
         messages = [{"role": "user", "content": query}],
     )
     return JsonResponse(res, status=status.HTTP_200_OK, safe=False)
